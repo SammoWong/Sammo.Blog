@@ -40,11 +40,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\SammoConstants.cs" />
+    <Compile Include="Entities\Article.cs" />
+    <Compile Include="Entities\ArticleTag.cs" />
+    <Compile Include="Entities\Blog.cs" />
+    <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\EntityBase.cs" />
+    <Compile Include="Entities\File.cs" />
+    <Compile Include="Entities\IEntity.cs" />
+    <Compile Include="Entities\Role.cs" />
+    <Compile Include="Entities\Tag.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DomainServices\" />
-    <Folder Include="Entities\" />
+    <Folder Include="Enums\" />
     <Folder Include="Repositories\" />
     <Folder Include="ValueObjects\" />
   </ItemGroup>
