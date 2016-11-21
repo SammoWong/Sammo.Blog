@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntityFramework\Mapping\ArticleMapping.cs" />
+    <Compile Include="EntityFramework\Mapping\BlogMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -14,7 +14,7 @@ namespace Sammo.Blog.Repository.EntityFramework.Mapping
             //Key
             HasKey(a => a.Id);
 
-            // Properties
+            //Properties
             Property(a => a.Id).HasColumnName("Id").IsRequired();
             Property(a => a.Title).HasColumnName("Title").IsRequired().HasMaxLength(SammoConstants.Validation.ArticleTitleMaxLength);
             Property(a => a.Content).HasColumnName("Content").IsRequired();
@@ -23,6 +23,13 @@ namespace Sammo.Blog.Repository.EntityFramework.Mapping
             Property(a => a.CreatedTime).HasColumnName("CreatedTime").IsRequired();
             Property(a => a.LastEditTime).HasColumnName("LastEditTime").IsOptional();
 
+            //Relationships
+            HasMany(a => a.Tags).WithMany(a => a.Articles).Map(a =>
+            {
+                a.ToTable("ArticleTagRelation");
+                a.MapLeftKey("ArticleId");
+                a.MapRightKey("TagId");
+            });
         }
     }
 }
