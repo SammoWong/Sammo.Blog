@@ -26,6 +26,7 @@ namespace Sammo.Blog.Repository.EntityFramework.Mapping
             //Relationships
             HasMany(b => b.Tags).WithRequired(b => b.Blog).Map(b => b.MapKey("BlogId")).WillCascadeOnDelete(false);
             HasMany(b => b.Articles).WithRequired(b => b.Blog).Map(b => b.MapKey("BlogId")).WillCascadeOnDelete(false);
+
         }
     }
 }

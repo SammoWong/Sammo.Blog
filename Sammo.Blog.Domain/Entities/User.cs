@@ -16,7 +16,7 @@ namespace Sammo.Blog.Domain.Entities
 
         public string AvatarUrl { get; set; }
 
-        public bool IsEmailComfirmed { get; set; } = false;
+        public bool IsComfirmed { get; set; } = false;
 
         public bool IsLocked { get; set; } = true;
 

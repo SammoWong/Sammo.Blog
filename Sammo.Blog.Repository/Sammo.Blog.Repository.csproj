@@ -51,6 +51,10 @@
   <ItemGroup>
     <Compile Include="EntityFramework\Mapping\ArticleMapping.cs" />
     <Compile Include="EntityFramework\Mapping\BlogMapping.cs" />
+    <Compile Include="EntityFramework\Mapping\CategoryMapping.cs" />
+    <Compile Include="EntityFramework\Mapping\RoleMapping.cs" />
+    <Compile Include="EntityFramework\Mapping\TagMapping.cs" />
+    <Compile Include="EntityFramework\Mapping\UserMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
