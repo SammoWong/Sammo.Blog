@@ -23,9 +23,12 @@
             public const int UserNameOrNickNameMaxLength = 10;
             public const int PasswordMinLength = 6;
             public const int PasswordMaxLength = 16;
+            public const int EncryptedPasswordMaxLength = 64;
             public const int EmailMaxLength = 30;
             public const int CommentMinLength = 5;
             public const int CommentMaxLength = 200;
+            public const int UrlMaxLength = 250;
+            public const int IpAddressMaxLength = 16;
         }
     }
 }

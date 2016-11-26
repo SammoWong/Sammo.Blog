@@ -10,8 +10,8 @@ namespace Sammo.Blog.Repository.EntityFramework.Mapping
         {
             ToTable("Role");
 
-            HasKey(r => r.Id);
-            HasKey(r => r.Type);
+            //设置复合主键
+            HasKey(r => r.Type );
 
             Property(r => r.Id).HasColumnName("Id").IsRequired();
             Property(r => r.Type).HasColumnName("Type").IsRequired();
