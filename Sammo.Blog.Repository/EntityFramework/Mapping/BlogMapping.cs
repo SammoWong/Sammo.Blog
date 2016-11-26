@@ -14,6 +14,7 @@ namespace Sammo.Blog.Repository.EntityFramework.Mapping
             HasKey(b => b.Id);
 
             //Properties
+            Property(b => b.Id).HasColumnName("Id").IsRequired();
             Property(b => b.Name).HasColumnName("Name").IsRequired().HasMaxLength(SammoConstants.Validation.BlogNameMaxLength);
             Property(b => b.Description).HasColumnName("Description").IsOptional().HasMaxLength(SammoConstants.Validation.BlogDescriptionMaxLength);
             Property(b => b.Url).HasColumnName("Url").IsOptional();
@@ -26,7 +27,6 @@ namespace Sammo.Blog.Repository.EntityFramework.Mapping
             //Relationships
             HasMany(b => b.Tags).WithRequired(b => b.Blog).Map(b => b.MapKey("BlogId")).WillCascadeOnDelete(false);
             HasMany(b => b.Articles).WithRequired(b => b.Blog).Map(b => b.MapKey("BlogId")).WillCascadeOnDelete(false);
-
         }
     }
 }

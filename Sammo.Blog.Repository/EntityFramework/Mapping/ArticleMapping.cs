@@ -30,6 +30,8 @@ namespace Sammo.Blog.Repository.EntityFramework.Mapping
                 a.MapLeftKey("ArticleId");
                 a.MapRightKey("TagId");
             });
+
+            HasMany(a => a.Comments).WithRequired(a => a.Article).Map(a => a.MapKey("ArticleId")).WillCascadeOnDelete(false);
         }
     }
 }

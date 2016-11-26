@@ -13,6 +13,7 @@ namespace Sammo.Blog.Repository.EntityFramework.Mapping
             HasKey(r => r.Id);
             HasKey(r => r.Type);
 
+            Property(r => r.Id).HasColumnName("Id").IsRequired();
             Property(r => r.Type).HasColumnName("Type").IsRequired();
             Property(r => r.Name).HasColumnName("Name").IsRequired().HasMaxLength(SammoConstants.Validation.RoleNameMaxLength);
             Property(r => r.Description).HasColumnName("Description").IsOptional().HasMaxLength(SammoConstants.Validation.RoleDescriptionMaxLength);

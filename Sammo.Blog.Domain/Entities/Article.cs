@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Sammo.Blog.Domain.Entities
 {
-    public class Article:EntityBase
+    public class Article : EntityBase
     {
         public string Title { get; set; }
 
@@ -21,6 +21,8 @@ namespace Sammo.Blog.Domain.Entities
 
         public virtual Blog Blog { get; set; }
 
-        public virtual  ICollection<Tag> Tags { get; set; }
+        public virtual ICollection<Tag> Tags { get; set; }
+
+        public virtual ICollection<Comment> Comments { get; set; }
     }
 }

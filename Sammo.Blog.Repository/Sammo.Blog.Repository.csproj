@@ -34,6 +34,10 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EntityFramework.Extended, Version=6.0.0.0, Culture=neutral, PublicKeyToken=05b7e29bdd433584, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.Extended.6.1.0.168\lib\net45\EntityFramework.Extended.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
@@ -52,13 +56,24 @@
     <Compile Include="EntityFramework\Mapping\ArticleMapping.cs" />
     <Compile Include="EntityFramework\Mapping\BlogMapping.cs" />
     <Compile Include="EntityFramework\Mapping\CategoryMapping.cs" />
+    <Compile Include="EntityFramework\Mapping\CommentMapping.cs" />
     <Compile Include="EntityFramework\Mapping\RoleMapping.cs" />
     <Compile Include="EntityFramework\Mapping\TagMapping.cs" />
     <Compile Include="EntityFramework\Mapping\UserMapping.cs" />
+    <Compile Include="EntityFramework\Repositories\BaseRepository.cs" />
+    <Compile Include="EntityFramework\SammoDbContext.cs" />
+    <Compile Include="EntityFramework\UnitOfWork.cs" />
+    <Compile Include="Migrations\201611261721323_InitDb.cs" />
+    <Compile Include="Migrations\201611261721323_InitDb.Designer.cs">
+      <DependentUpon>201611261721323_InitDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="EntityFramework\Repositories\" />
+    <EmbeddedResource Include="Migrations\201611261721323_InitDb.resx">
+      <DependentUpon>201611261721323_InitDb.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sammo.Blog.Domain\Sammo.Blog.Domain.csproj">

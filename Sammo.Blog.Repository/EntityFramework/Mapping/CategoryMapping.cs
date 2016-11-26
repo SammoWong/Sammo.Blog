@@ -15,6 +15,7 @@ namespace Sammo.Blog.Repository.EntityFramework.Mapping
             HasKey(c => c.Id);
 
             //Properties
+            Property(c => c.Id).HasColumnName("Id").IsRequired();
             Property(c => c.Name).HasColumnName("Name").IsRequired().HasMaxLength(SammoConstants.Validation.CategoryNameMaxLength);
             Property(c => c.Description).HasColumnName("Description").IsOptional().HasMaxLength(SammoConstants.Validation.CagegoryDescriptionMaxLength);
             Property(c => c.CreatedTime).HasColumnName("CreatedTime").IsRequired();

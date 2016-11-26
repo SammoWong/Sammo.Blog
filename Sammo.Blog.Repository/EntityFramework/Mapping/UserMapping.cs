@@ -12,6 +12,7 @@ namespace Sammo.Blog.Repository.EntityFramework.Mapping
 
             HasKey(u => u.Id);
 
+            Property(u => u.Id).HasColumnName("Id").IsRequired();
             Property(u => u.UserName).HasColumnName("UserName").IsRequired().HasMaxLength(SammoConstants.Validation.UserNameOrNickNameMaxLength);
             Property(u => u.NickName).HasColumnName("NickName").IsOptional().HasMaxLength(SammoConstants.Validation.UserNameOrNickNameMaxLength);
             Property(u => u.Password).HasColumnName("Password").IsRequired();
@@ -22,10 +23,11 @@ namespace Sammo.Blog.Repository.EntityFramework.Mapping
             Property(u => u.IsLocked).HasColumnName("IsLocked").IsRequired();
             Property(u => u.CreatedTime).HasColumnName("CreatedTime").IsRequired();
             Property(u => u.LastEditTime).HasColumnName("LastEditTime").IsOptional();
-            Property(u => u.LastLoginTime).HasColumnName("LastEditTime").IsOptional();
-            Property(u => u.LastLoginIp).HasColumnName("LastEditTime").IsOptional();
+            Property(u => u.LastLoginTime).HasColumnName("LastLoginTime").IsOptional();
+            Property(u => u.LastLoginIp).HasColumnName("LastLoginIp").IsOptional();
 
-            HasOptional(u => u.Blog).WithRequired(u => u.Author).Map(u=>u.MapKey("UserId"));
+            HasOptional(u => u.Blog).WithRequired(u => u.Author).Map(u => u.MapKey("UserId")).WillCascadeOnDelete(false);
+            HasMany(u => u.Comments).WithRequired(u => u.Author).Map(u => u.MapKey("UserId")).WillCascadeOnDelete(false);
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Sammo.Blog.Domain.Entities
 {
-    public class Blog:EntityBase
+    public class Blog : EntityBase
     {
         public string Name { get; set; }
 

@@ -24,6 +24,8 @@
             public const int PasswordMinLength = 6;
             public const int PasswordMaxLength = 16;
             public const int EmailMaxLength = 30;
+            public const int CommentMinLength = 5;
+            public const int CommentMaxLength = 200;
         }
     }
 }
