@@ -3,14 +3,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>@ViewBag.Title - Sammo's Blog</title>
+    <meta name="keywords" content="Sammo's Blog">
+    <meta name="description" content="Sammo's Blog">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -29,14 +31,93 @@
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
-    </div>
+    </div>*@
+
+    <header class="vc-header">
+        <nav class="navbar navbar-default" data-spy="affix" data-offset-top="80">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#vmenu">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="">
+                        <h1 class="vc-logo">Sammo</h1>
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="vmenu">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            @Html.ActionLink("首页", "Index", "Home")
+                        </li>
+                        <li>
+                            <a href="#">作品</a>
+                        </li>
+                        <li>
+                            <a href="#">关于</a>
+                        </li>
+                        <li>
+                            <a href="#">GitHub</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">更多可能 <span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="#">执行力</a>
+                                </li>
+                                <li>
+                                    <a href="#">实验室</a>
+                                </li>
+                                <li>
+                                    <a href="#">一些其它的</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#">简历</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#">这里可能是多的</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 应用程序</p>
-        </footer>
     </div>
+
+
+    <footer class="vc-footer">
+        <div class="vc-footer-info">
+            <ul class="vc-footer-menu">
+                <li>
+                    <a class="vc-a" href="#!"><i class="fa fa-weixin"></i></a>
+                </li>
+                <li>
+                    <a class="vc-a" href="#!"><i class="fa fa-weibo"></i></a>
+                </li>
+                <li>
+                    <a class="vc-a" href="#!"><i class="fa fa-rss"></i></a>
+                </li>
+                <li>
+                    <a class="vc-a" href="#!"><i class="fa fa-github"></i></a>
+                </li>
+            </ul>
+        </div>
+        <div class="vc-footer-copyright">
+            <div>
+                sammo Copyright © @DateTime.Now.Year <a class="vc-a" href="#!">Sammo</a>
+            </div>
+            Powered by <a class="vc-a" href="#!">Sammo</a>
+        </div>
+    </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
