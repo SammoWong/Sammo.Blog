@@ -196,6 +196,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -221,6 +222,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Account\Login.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -233,41 +237,37 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Static\Css\Shared\animate.css" />
-    <Content Include="Static\Css\Shared\Bootstrap\bootstrap-rtl.css" />
-    <Content Include="Static\Css\Shared\Bootstrap\bootstrap.min.css" />
-    <Content Include="Static\Css\Shared\Bootstrap\rewrite-bootstrap.css" />
-    <Content Include="Static\Css\Shared\font-awesome.css" />
-    <Content Include="Static\Css\Shared\font-awesome.min.css" />
-    <Content Include="Static\Css\Shared\Plugins\gritter\jquery.gritter.css" />
-    <Content Include="Static\Css\Shared\Plugins\iCheck\custom.css" />
-    <Content Include="Static\Css\Shared\Plugins\iCheck\green%402x.png" />
-    <Content Include="Static\Css\Shared\Plugins\iCheck\green.png" />
-    <Content Include="Static\Css\Shared\Plugins\morris\morris-0.4.3.min.css" />
-    <Content Include="Static\Css\Shared\Plugins\summernote\summernote-bs3.css" />
-    <Content Include="Static\Css\Shared\Plugins\summernote\summernote.css" />
-    <Content Include="Static\Css\Shared\Plugins\toastr\toastr.min.css" />
-    <Content Include="Static\Css\Shared\style.css" />
-    <Content Include="Static\Fonts\fontawesome-webfont.svg" />
-    <Content Include="Static\Images\logo.png" />
-    <Content Include="Static\Js\Shared\base.js" />
-    <Content Include="Static\Js\Shared\Bootstrap\bootstrap.min.js" />
-    <Content Include="Static\Js\Shared\hplus.js" />
-    <Content Include="Static\Js\Shared\JQuery\jquery-2.1.1.min.js" />
-    <Content Include="Static\Js\Shared\JQuery\jquery-ui-1.10.4.min.js" />
-    <Content Include="Static\Js\Shared\JQuery\jquery-ui.custom.min.js" />
-    <Content Include="Static\Js\Shared\JQuery\jquery.min.js" />
-    <Content Include="Static\Js\Shared\notification.js" />
-    <Content Include="Static\Js\Shared\Plugins\iCheck\icheck.min.js" />
-    <Content Include="Static\Js\Shared\Plugins\metisMenu\jquery.metisMenu.js" />
-    <Content Include="Static\Js\Shared\Plugins\pace\pace.min.js" />
-    <Content Include="Static\Js\Shared\Plugins\slimScroll\jquery.slimscroll.min.js" />
-    <Content Include="Static\Js\Shared\Plugins\summernote\summernote-zh-CN.js" />
-    <Content Include="Static\Js\Shared\Plugins\summernote\summernote.min.js" />
-    <Content Include="Static\Js\Shared\Vue\vue-resource.js" />
-    <Content Include="Static\Js\Shared\Vue\vue-resource.min.js" />
-    <Content Include="Static\Js\Shared\Vue\vue.js" />
-    <Content Include="Static\Js\Shared\Vue\vue.min.js" />
+    <Content Include="Static\Admin\Css\Shared\animate.css" />
+    <Content Include="Static\Admin\Css\Shared\bootstrap-rtl.css" />
+    <Content Include="Static\Admin\Css\Shared\bootstrap.min.css" />
+    <Content Include="Static\Admin\Css\Shared\font-awesome.css" />
+    <Content Include="Static\Admin\Css\Shared\style.css" />
+    <Content Include="Static\Admin\Js\Shared\bootstrap.min.js" />
+    <Content Include="Static\Admin\Js\Shared\hplus.js" />
+    <Content Include="Static\Admin\Js\Shared\jquery-2.1.1.min.js" />
+    <Content Include="Static\Admin\Js\Shared\jquery-ui-1.10.4.min.js" />
+    <Content Include="Static\Admin\Js\Shared\jquery-ui.custom.min.js" />
+    <Content Include="Static\Portal\Css\Shared\animate.css" />
+    <Content Include="Static\Portal\Css\Shared\bootstrap-rtl.css" />
+    <Content Include="Static\Portal\Css\Shared\bootstrap.min.css" />
+    <Content Include="Static\Portal\Css\Shared\rewrite-bootstrap.css" />
+    <Content Include="Static\Portal\Css\Shared\font-awesome.css" />
+    <Content Include="Static\Portal\Css\Shared\font-awesome.min.css" />
+    <Content Include="Static\Admin\Js\Shared\gritter\jquery.gritter.css" />
+    <Content Include="Static\Admin\Js\Shared\iCheck\custom.css" />
+    <Content Include="Static\Admin\Js\Shared\iCheck\green%402x.png" />
+    <Content Include="Static\Admin\Js\Shared\iCheck\green.png" />
+    <Content Include="Static\Admin\Js\Shared\morris\morris-0.4.3.min.css" />
+    <Content Include="Static\Admin\Js\Shared\summernote\summernote-bs3.css" />
+    <Content Include="Static\Admin\Js\Shared\summernote\summernote.css" />
+    <Content Include="Static\Admin\Js\Shared\toastr\toastr.min.css" />
+    <Content Include="Static\Portal\Css\Shared\style.css" />
+    <Content Include="Static\Portal\Js\Shared\base.js" />
+    <Content Include="Static\Portal\Js\Shared\bootstrap.min.js" />
+    <Content Include="Static\Portal\Js\Shared\html5.js" />
+    <Content Include="Static\Portal\Js\Shared\jquery.min.js" />
+    <Content Include="Static\Portal\Js\Shared\respond.min.js" />
+    <Content Include="Static\Shared\Images\logo.png" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -302,22 +302,10 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Static\Fonts\fontawesome-webfont.eot" />
-    <Content Include="Static\Fonts\fontawesome-webfont.eot_v=4.3.0" />
-    <Content Include="Static\Fonts\fontawesome-webfont.svg_v=4.3.0" />
-    <Content Include="Static\Fonts\fontawesome-webfont.ttf" />
-    <Content Include="Static\Fonts\fontawesome-webfont.ttf_v=4.3.0" />
-    <Content Include="Static\Fonts\fontawesome-webfont.woff" />
-    <Content Include="Static\Fonts\fontawesome-webfont.woff2_v=4.3.0" />
-    <Content Include="Static\Fonts\fontawesome-webfont.woff_v=4.3.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
-    <Folder Include="Static\Component\" />
-    <Folder Include="Static\Media\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
