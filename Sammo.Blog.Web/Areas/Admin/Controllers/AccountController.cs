@@ -9,5 +9,10 @@ namespace Sammo.Blog.Web.Areas.Admin.Controllers
         {
             return View();
         }
+
+        public ActionResult Register()
+        {
+            return View();
+        }
     }
 }
