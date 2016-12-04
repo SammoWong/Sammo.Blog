@@ -57,7 +57,7 @@
     <Compile Include="Repositories\IRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DomainServices\" />
+    <Folder Include="DomainService\" />
     <Folder Include="Enums\" />
     <Folder Include="ValueObjects\" />
   </ItemGroup>

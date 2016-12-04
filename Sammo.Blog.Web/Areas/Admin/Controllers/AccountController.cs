@@ -2,14 +2,16 @@
 
 namespace Sammo.Blog.Web.Areas.Admin.Controllers
 {
-    public class AccountController : Controller
+    [RouteArea("Admin")]
+    public class AccountController : AdminBaseController
     {
-        // GET: Admin/Account
+        [AllowAnonymous]
         public ActionResult Login()
         {
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult Register()
         {
             return View();

@@ -8,7 +8,7 @@ namespace Sammo.Blog.Web
     {
         public void Configuration(IAppBuilder app)
         {
-            ConfigureAuth(app);
+            ConfigureOAuth(app);
         }
     }
 }

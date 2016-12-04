@@ -6,6 +6,9 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using Sammo.Blog.Web.Models;
+using Microsoft.Owin.Security.OAuth;
+using System.Threading.Tasks;
+using System.Security.Claims;
 
 namespace Sammo.Blog.Web
 {
@@ -63,6 +66,46 @@ namespace Sammo.Blog.Web
             //    ClientId = "",
             //    ClientSecret = ""
             //});
+        }
+
+        public void ConfigureOAuth(IAppBuilder app)
+        {
+            var oAuthServerOptions = new OAuthAuthorizationServerOptions()
+            {
+                AllowInsecureHttp = true,
+                TokenEndpointPath = new PathString("/Token"),
+                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(30),
+                Provider = new SammoAuthorizationServerProvider()
+            };
+            app.UseOAuthAuthorizationServer(oAuthServerOptions);
+            app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
+        }
+    }
+
+    public class SammoAuthorizationServerProvider : OAuthAuthorizationServerProvider
+    {
+        public override async Task ValidateClientAuthentication(OAuthValidateClientAuthenticationContext context) => context.Validated();
+
+        public override async Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
+        {
+            context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
+
+            //using (var repo = new AuthRepository())
+            //{
+            //    var user = await repo.FindUser(context.UserName, context.Password);
+
+            //    if (user == null)
+            //    {
+            //        context.SetError("invalid_grant", "The user name or password is incorrect.");
+            //        return;
+            //    }
+            //}
+
+            var identity = new ClaimsIdentity(context.Options.AuthenticationType);
+            identity.AddClaim(new Claim("sub", context.UserName));
+            identity.AddClaim(new Claim("role", "user"));
+
+            context.Validated(identity);
         }
     }
 }
