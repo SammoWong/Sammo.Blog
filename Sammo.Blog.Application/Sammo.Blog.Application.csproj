@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,11 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\AccountAppService.cs" />
+    <Compile Include="Account\Dto\LoginInput.cs" />
+    <Compile Include="Account\Dto\RegisterInput.cs" />
     <Compile Include="IApplicationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Account\Dto\" />
+    <ProjectReference Include="..\Sammo.Blog.Domain\Sammo.Blog.Domain.csproj">
+      <Project>{71032D09-D2EB-47F3-9576-E2CE771A1955}</Project>
+      <Name>Sammo.Blog.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

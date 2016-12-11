@@ -16,6 +16,7 @@ namespace Sammo.Blog.Repository.EntityFramework.Mapping
             Property(u => u.UserName).HasColumnName("UserName").IsRequired().HasMaxLength(SammoConstants.Validation.UserNameOrNickNameMaxLength);
             Property(u => u.NickName).HasColumnName("NickName").IsOptional().HasMaxLength(SammoConstants.Validation.UserNameOrNickNameMaxLength);
             Property(u => u.Password).HasColumnName("Password").IsRequired().HasMaxLength(SammoConstants.Validation.EncryptedPasswordMaxLength);
+            Property(u => u.Salt).HasColumnName("Salt").IsRequired().HasMaxLength(SammoConstants.Validation.SaltMaxLength);
             Property(u => u.Email).HasColumnName("Email").IsRequired().HasMaxLength(SammoConstants.Validation.EmailMaxLength);
             Property(u => u.Gender).HasColumnName("Gender").IsOptional();
             Property(u => u.AvatarUrl).HasColumnName("AvatarUrl").IsOptional().HasMaxLength(SammoConstants.Validation.UrlMaxLength);

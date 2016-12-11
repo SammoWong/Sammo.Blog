@@ -11,6 +11,8 @@ namespace Sammo.Blog.Domain.Entities
 
         public string Password { get; set; }
 
+        public string Salt { get; set; }
+
         public string Email { get; set; }
 
         public short Gender { get; set; }
