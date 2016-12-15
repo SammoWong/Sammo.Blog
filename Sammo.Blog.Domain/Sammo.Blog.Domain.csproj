@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Constants\SammoConstants.cs" />
     <Compile Include="DomainService\AccountService.cs" />
+    <Compile Include="DomainService\Interfaces\IAccountService.cs" />
     <Compile Include="Entities\Article.cs" />
     <Compile Include="Entities\Blog.cs" />
     <Compile Include="Entities\Category.cs" />

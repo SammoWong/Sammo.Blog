@@ -1,4 +1,5 @@
-﻿using Sammo.Blog.Web.Common.Extensions;
+﻿using Sammo.Blog.Application;
+using Sammo.Blog.Web.Common.Extensions;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,13 +18,18 @@ namespace Sammo.Blog.Web.Areas.Admin.Controllers
             }
         }
 
-        protected virtual async Task CheckModelState()
+        protected virtual async Task CheckModelStateAsync()
         {
             if (!ModelState.IsValid)
             {
                 var msg = await Task.Run(() => ModelState.AllModelStateErrors().FirstOrDefault());
                 throw new Exception(msg.Message);
             }
+        }
+
+        public static T GetAppService<T>()
+        {
+            return IoCConfig.Get<T>();
         }
     }
 }

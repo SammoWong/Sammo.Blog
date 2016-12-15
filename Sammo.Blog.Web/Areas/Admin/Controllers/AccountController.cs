@@ -1,12 +1,21 @@
-﻿using Sammo.Blog.Application.Account.Dto;
+﻿using Sammo.Blog.Application.AppService;
+using Sammo.Blog.Application.Dto.Account;
+using Sammo.Blog.Domain.Enums;
+using Sammo.Blog.Web.Common.Results;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace Sammo.Blog.Web.Areas.Admin.Controllers
 {
     [RouteArea("Admin")]
     public class AccountController : AdminBaseController
     {
+        private AccountAppService _service;
+        public AccountController(AccountAppService service)
+        {
+            _service = service;
+        }
         [AllowAnonymous]
         public ActionResult Register()
         {
@@ -20,16 +29,29 @@ namespace Sammo.Blog.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Register(RegisterInput input)
+        public async Task<ActionResult> RegisterAsync(RegisterInput input)
         {
-            await CheckModelState();
+            await CheckModelStateAsync();
+            var result = await _service.RegisterAsync(input);
+            switch (result)
+            {
+                case RegisterResult.Success:
+                    FormsAuthentication.SetAuthCookie(input.UserName, true);
+                    return new Json(true, "注册成功", null);
+                case RegisterResult.UserNameExists:
+                    break;
+                case RegisterResult.EmailExists:
+                    break;
+                default:
+                    break;
+            }
             return View();
         }
 
         [HttpPost]
         public async Task<ActionResult> Login(LoginInput input)
         {
-            await CheckModelState();
+            await CheckModelStateAsync();
 
             return View();
         }

@@ -39,6 +39,7 @@
             public const string UserNameOrEmailFormatError = "用户名或邮箱必须为4-20个字符，支持中文、英文、数字";
             public const string PasswordFormatError = "密码必须为6~20个字符，字母+数字组合";
             public const string UserNameFormatError = "用户名必须为4-20个字符，支持中文、英文、数字";
+            public const string NickNameFormatError = "昵称必须为4-20个字符，支持中文、英文、数字";
             public const string EmailFormatError = "邮箱格式不正确";
             public const string UserNameOrEmailNotFound = "用户名或邮箱不存在";
         }

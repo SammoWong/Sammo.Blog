@@ -1,7 +1,7 @@
 ﻿using Sammo.Blog.Domain.Constants;
 using System.ComponentModel.DataAnnotations;
 
-namespace Sammo.Blog.Application.Account.Dto
+namespace Sammo.Blog.Application.Dto.Account
 {
     public class RegisterInput
     {
@@ -13,8 +13,13 @@ namespace Sammo.Blog.Application.Account.Dto
 
         [Required(ErrorMessage = "{0}不能为空")]
         [Display(Name = "邮箱")]
-        [RegularExpression(SammoConstants.RegularPattern.Email,ErrorMessage = SammoConstants.Error.EmailFormatError)]
+        [RegularExpression(SammoConstants.RegularPattern.Email, ErrorMessage = SammoConstants.Error.EmailFormatError)]
         public string Email { get; set; }
+
+        [StringLength(SammoConstants.Validation.UserNameOrNickNameMaxLength, MinimumLength = SammoConstants.Validation.UserNameOrNickNameMinLength
+            , ErrorMessage = SammoConstants.Error.NickNameFormatError)]
+        [Display(Name = "昵称")]
+        public string NickName { get; set; }
 
         [DataType(DataType.Password)]
         [Required(ErrorMessage = "{0}不能为空")]

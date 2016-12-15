@@ -1,4 +1,5 @@
 ﻿using Sammo.Blog.Domain.Constants;
+using Sammo.Blog.Domain.DomainService.Interfaces;
 using Sammo.Blog.Domain.Entities;
 using Sammo.Blog.Domain.Enums;
 using Sammo.Blog.Domain.Repositories;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Sammo.Blog.Domain.DomainService
 {
-    public class AccountService
+    public class AccountService : IAccountService
     {
         private readonly IUserRepository _userRepository;
         public AccountService(IUserRepository userRepository)

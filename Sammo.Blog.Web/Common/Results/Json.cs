@@ -18,6 +18,12 @@ namespace Sammo.Blog.Web.Common.Results
             JsonRequestBehavior = jsonRequestBehavior;
         }
 
+        public Json(bool state, string msg = "", object data = null, JsonRequestBehavior jsonRequestBehavior = JsonRequestBehavior.DenyGet)
+        {
+            Data = new JsonData(state, msg, data);
+            JsonRequestBehavior = jsonRequestBehavior;
+        }
+
         public override void ExecuteResult(ControllerContext context)
         {
             if (context == null)

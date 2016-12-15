@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Sammo.Blog.Application.Account.Dto
+namespace Sammo.Blog.Application.Dto.Account
 {
     public class LoginInput
     {
