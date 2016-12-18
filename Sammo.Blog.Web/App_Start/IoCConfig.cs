@@ -1,11 +1,12 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
-using Sammo.Blog.Application.AppService;
+using Sammo.Blog.Application.Account;
 using Sammo.Blog.Domain;
 using Sammo.Blog.Domain.DomainService;
 using Sammo.Blog.Domain.Repositories;
 using Sammo.Blog.Repository.EntityFramework;
 using Sammo.Blog.Repository.EntityFramework.Repositories;
+using System.Linq;
 using System.Reflection;
 using System.Web.Mvc;
 
@@ -22,7 +23,12 @@ namespace Sammo.Blog.Web
             builder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IRepository<>));
             builder.RegisterType(typeof(UnitOfWork)).As(typeof(IUnitOfWork));
 
-            //注册app层
+            //注册Repository
+            builder.RegisterAssemblyTypes(Assembly.GetAssembly(typeof(UserRepository)))
+                .Where(t => t.Name.EndsWith("Repository"))
+                .As(type => type.GetInterfaces().Single(i => !i.IsGenericType));
+
+            //注册ApplicationService
             builder.RegisterAssemblyTypes(Assembly.GetAssembly(typeof(AccountAppService)));
 
             //注册领域服务
@@ -57,7 +63,7 @@ namespace Sammo.Blog.Web
         public static T Get<T>()
         {
             return _container.Resolve<T>();
-               //return (T)DependencyResolver.Current.GetService(typeof(T));
+            //return (T)DependencyResolver.Current.GetService(typeof(T));
         }
     }
 }

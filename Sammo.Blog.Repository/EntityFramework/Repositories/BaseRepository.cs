@@ -13,11 +13,7 @@ namespace Sammo.Blog.Repository.EntityFramework.Repositories
 {
     public class BaseRepository<T> : IRepository<T> where T : EntityBase
     {
-        public SammoDbContext SammoDbContext { get; }
-        public BaseRepository(ISammoDbContext _sammoDbContext)
-        {
-            SammoDbContext = _sammoDbContext as SammoDbContext;
-        }
+        protected SammoDbContext SammoDbContext = new SammoDbContext();
 
         public IQueryable<T> Find(Expression<Func<T,bool>> filter)
         {

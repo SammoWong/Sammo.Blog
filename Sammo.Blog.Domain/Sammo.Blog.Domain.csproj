@@ -55,7 +55,6 @@
     <Compile Include="Entities\User.cs" />
     <Compile Include="Enums\LoginResult.cs" />
     <Compile Include="Enums\RegisterResult.cs" />
-    <Compile Include="ISammoDbContext.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IRepository.cs" />

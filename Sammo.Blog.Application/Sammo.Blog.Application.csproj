@@ -45,9 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppService\AccountAppService.cs" />
-    <Compile Include="Dto\Account\LoginInput.cs" />
-    <Compile Include="Dto\Account\RegisterInput.cs" />
+    <Compile Include="Account\AccountAppService.cs" />
+    <Compile Include="Account\Dto\LoginInput.cs" />
+    <Compile Include="Account\Dto\RegisterInput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

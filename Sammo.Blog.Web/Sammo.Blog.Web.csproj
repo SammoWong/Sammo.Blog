@@ -288,9 +288,9 @@
     <Content Include="Static\Admin\Css\Shared\bootstrap.min.css" />
     <Content Include="Static\Admin\Css\Shared\font-awesome.css" />
     <Content Include="Static\Admin\Css\Shared\style.css" />
+    <Content Include="Static\Admin\Js\Account\register.js" />
     <Content Include="Static\Admin\Js\Shared\bootstrap.min.js" />
     <Content Include="Static\Admin\Js\Shared\hplus.js" />
-    <Content Include="Static\Admin\Js\Shared\iCheck\icheck.min.js" />
     <Content Include="Static\Admin\Js\Shared\jquery-2.1.1.min.js" />
     <Content Include="Static\Admin\Js\Shared\jquery-ui-1.10.4.min.js" />
     <Content Include="Static\Admin\Js\Shared\jquery-ui.custom.min.js" />
@@ -300,14 +300,6 @@
     <Content Include="Static\Portal\Css\Shared\rewrite-bootstrap.css" />
     <Content Include="Static\Portal\Css\Shared\font-awesome.css" />
     <Content Include="Static\Portal\Css\Shared\font-awesome.min.css" />
-    <Content Include="Static\Admin\Css\Shared\gritter\jquery.gritter.css" />
-    <Content Include="Static\Admin\Css\Shared\iCheck\custom.css" />
-    <Content Include="Static\Admin\Css\Shared\iCheck\green%402x.png" />
-    <Content Include="Static\Admin\Css\Shared\iCheck\green.png" />
-    <Content Include="Static\Admin\Css\Shared\morris\morris-0.4.3.min.css" />
-    <Content Include="Static\Admin\Css\Shared\summernote\summernote-bs3.css" />
-    <Content Include="Static\Admin\Css\Shared\summernote\summernote.css" />
-    <Content Include="Static\Admin\Css\Shared\toastr\toastr.min.css" />
     <Content Include="Static\Portal\Css\Shared\style.css" />
     <Content Include="Static\Portal\Js\Shared\base.js" />
     <Content Include="Static\Portal\Js\Shared\bootstrap.min.js" />
@@ -315,6 +307,22 @@
     <Content Include="Static\Portal\Js\Shared\jquery.min.js" />
     <Content Include="Static\Portal\Js\Shared\respond.min.js" />
     <Content Include="Static\Shared\Images\logo.png" />
+    <Content Include="Static\Shared\Js\Vue\vue-validator.js" />
+    <Content Include="Static\Shared\Js\Vue\vue-validator.min.js" />
+    <Content Include="Static\Shared\Js\Vue\vue.js" />
+    <Content Include="Static\Shared\Js\Vue\vue.min.js" />
+    <Content Include="Static\Shared\Plugins\Gritter\jquery.gritter.css" />
+    <Content Include="Static\Shared\Plugins\ICheck\custom.css" />
+    <Content Include="Static\Shared\Plugins\ICheck\green%402x.png" />
+    <Content Include="Static\Shared\Plugins\ICheck\green.png" />
+    <Content Include="Static\Shared\Plugins\ICheck\icheck.min.js" />
+    <Content Include="Static\Shared\Plugins\MetisMenu\jquery.metisMenu.js" />
+    <Content Include="Static\Shared\Plugins\Morris\morris-0.4.3.min.css" />
+    <Content Include="Static\Shared\Plugins\Pace\pace.min.js" />
+    <Content Include="Static\Shared\Plugins\Summernote\summernote-bs3.css" />
+    <Content Include="Static\Shared\Plugins\Summernote\summernote.css" />
+    <Content Include="Static\Shared\Plugins\Toastr\toastr.min.css" />
+    <Content Include="Static\Shared\Plugins\Toastr\toastr.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

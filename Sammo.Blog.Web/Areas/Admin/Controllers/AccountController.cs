@@ -1,5 +1,5 @@
-﻿using Sammo.Blog.Application.AppService;
-using Sammo.Blog.Application.Dto.Account;
+﻿using Sammo.Blog.Application.Account;
+using Sammo.Blog.Application.Account.Dto;
 using Sammo.Blog.Domain.Enums;
 using Sammo.Blog.Web.Common.Results;
 using System.Threading.Tasks;
@@ -12,9 +12,9 @@ namespace Sammo.Blog.Web.Areas.Admin.Controllers
     public class AccountController : AdminBaseController
     {
         private AccountAppService _service;
-        public AccountController(AccountAppService service)
+        public AccountController()
         {
-            _service = service;
+            _service = IoCConfig.Get<AccountAppService>();
         }
         [AllowAnonymous]
         public ActionResult Register()

@@ -1,7 +1,7 @@
 ﻿using Sammo.Blog.Domain.Constants;
 using System.ComponentModel.DataAnnotations;
 
-namespace Sammo.Blog.Application.Dto.Account
+namespace Sammo.Blog.Application.Account.Dto
 {
     public class RegisterInput
     {
@@ -33,4 +33,5 @@ namespace Sammo.Blog.Application.Dto.Account
         [Compare("Password", ErrorMessage = "密码和确认密码不匹配")]
         public string ConfirmPassword { get; set; }
     }
+
 }

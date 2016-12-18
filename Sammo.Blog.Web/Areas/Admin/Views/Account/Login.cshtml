@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Login";
     Layout = null;
 }
@@ -16,7 +15,7 @@
     <link href="~/Static/Admin/Css/Shared/font-awesome.css" rel="stylesheet" />
     <link href="~/Static/Admin/Css/Shared/animate.css" rel="stylesheet" />
     <link href="~/Static/Admin/Css/Shared/style.css" rel="stylesheet" />
-    <link href="~/Static/Admin/Css/Shared/iCheck/custom.css" rel="stylesheet" />
+    <link href="~/Static/Shared/Plugins/ICheck/custom.css" rel="stylesheet" />
 </head>
 
 <body class="gray-bg">
@@ -48,9 +47,10 @@
         </div>
     </div>
     <!-- Mainly scripts -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
     <script src="~/Static/Admin/Js/Shared/jquery-2.1.1.min.js"></script>
     <script src="~/Static/Admin/Js/Shared/bootstrap.min.js"></script>
-    <script src="~/Static/Admin/Js/Shared/iCheck/icheck.min.js"></script>
+    <script src="~/Static/Shared/Plugins/ICheck/icheck.min.js"></script>
     <script>
         $(document).ready(function () {
             $('.i-checks').iCheck({

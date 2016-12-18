@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Sammo.Blog.Repository.EntityFramework
 {
-    public class SammoDbContext : DbContext, ISammoDbContext
+    public class SammoDbContext : DbContext
     {
         public SammoDbContext() : base("Name=SammoDbConnection")
         { }
