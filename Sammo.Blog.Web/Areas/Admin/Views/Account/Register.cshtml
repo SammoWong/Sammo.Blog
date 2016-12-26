@@ -1,4 +1,4 @@
-﻿@{ 
+﻿@{
     Layout = null;
 }
 <!DOCTYPE html>
@@ -19,39 +19,41 @@
 </head>
 <body class="gray-bg">
     <div class="middle-box text-center loginscreen   animated fadeInDown">
-        <div id="registerForm">
-            <div>
-                <h1 class="logo-name">Sammo</h1>
-            </div>
-            <h3>欢迎来到Sammo's Blog</h3>
-            <p>创建一个新账户</p>
+        <div>
+            <h1 class="logo-name">Sammo</h1>
+        </div>
+        <h3>欢迎来到Sammo's Blog</h3>
+        <p>创建一个新账户</p>
+        <form id="registerForm" role="form" method="post">
             <div class="m-t">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="请输入用户名" v-model="registerModel.userName" />
+                    <input type="text" id="userName" class="form-control" placeholder="请输入用户名" v-model="user.userName" name="userName" />
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="请输入邮箱" v-model="registerModel.email" />
+                    <input type="text" id="email" class="form-control" placeholder="请输入邮箱" v-model="user.email" name="email" />
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="请输入密码" v-model="registerModel.password" />
+                    <input type="password" id="password" class="form-control" placeholder="请输入密码" v-model="user.password" name="password" />
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="请再次输入密码" v-model="registerModel.confirmPassword" />
+                    <input type="password" id="comfirmPassword" class="form-control" placeholder="请再次输入密码" v-model="user.confirmPassword" name="confirmPassword" />
                 </div>
-                <button class="btn btn-primary block full-width m-b" v-on:click="register">注 册</button>
+                <button class="btn btn-primary block full-width m-b" v-on:click="register(registerModel)" type="submit">注 册</button>
                 <p class="text-muted text-center">
                     <small>已经有账户了？</small><a href="/Admin/Account/Login">点此登录</a>
                 </p>
             </div>
-        </div>
+        </form>
     </div>
     <!-- Mainly scripts -->
     <script src="~/Static/Admin/Js/Shared/jquery-2.1.1.min.js"></script>
+    <script src="~/Static/Shared/Js/jquery.validate.min.js"></script>
     <script src="~/Static/Admin/Js/Shared/bootstrap.min.js"></script>
     <script src="~/Static/Shared/Js/Vue/vue.min.js"></script>
     <script src="~/Static/Shared/Js/Vue/vue-validator.min.js"></script>
     <script src="~/Static/Shared/Plugins/ICheck/icheck.min.js"></script>
     <script src="~/Static/Shared/Plugins/Toastr/toastr.min.js"></script>
+    <script src="~/Static/Shared/Js/messages_zh.min.js"></script>
     <script src="~/Static/Admin/Js/Account/register.js"></script>
 </body>
 </html>

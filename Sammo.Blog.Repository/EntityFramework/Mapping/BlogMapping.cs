@@ -21,8 +21,8 @@ namespace Sammo.Blog.Repository.EntityFramework.Mapping
             Property(b => b.Visits).HasColumnName("Visits").IsRequired();
             Property(b => b.PageViews).HasColumnName("PageViews").IsRequired();
             Property(b => b.IsEnabled).HasColumnName("IsEnabled").IsRequired();
-            Property(b => b.CreatedTime).HasColumnName("CreatedTime").IsRequired();
-            Property(b => b.LastEditTime).HasColumnName("LastEditTime").IsOptional();
+            Property(b => b.CreatedOn).HasColumnName("CreatedOn").IsRequired();
+            Property(b => b.ModifiedOn).HasColumnName("ModifiedOn").IsOptional();
 
             //Relationships
             HasMany(b => b.Tags).WithRequired(b => b.Blog).Map(b => b.MapKey("BlogId")).WillCascadeOnDelete(false);

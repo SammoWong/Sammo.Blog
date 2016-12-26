@@ -5,6 +5,13 @@ namespace Sammo.Blog.Domain.Entities
 {
     public class User : EntityBase
     {
+        public User()
+        {
+            IsComfirmed = false;
+            IsLocked = false;
+            CreatedOn = DateTime.Now;
+            ModifiedOn = DateTime.Now;
+        }
         public string UserName { get; set; }
 
         public string NickName { get; set; }
@@ -19,13 +26,13 @@ namespace Sammo.Blog.Domain.Entities
 
         public string AvatarUrl { get; set; }
 
-        public bool IsComfirmed { get; set; } = false;
+        public bool IsComfirmed { get; set; }
 
-        public bool IsLocked { get; set; } = true;
+        public bool IsLocked { get; set; } 
 
-        public DateTime CreatedTime { get; set; } = DateTime.Now;
+        public DateTime CreatedOn { get; set; }
 
-        public DateTime LastEditTime { get; set; }
+        public DateTime ModifiedOn { get; set; }
 
         public DateTime LastLoginTime { get; set; }
 

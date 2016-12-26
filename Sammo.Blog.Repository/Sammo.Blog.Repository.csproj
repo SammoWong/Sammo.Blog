@@ -64,17 +64,12 @@
     <Compile Include="EntityFramework\Repositories\UserRepository.cs" />
     <Compile Include="EntityFramework\SammoDbContext.cs" />
     <Compile Include="EntityFramework\UnitOfWork.cs" />
-    <Compile Include="Migrations\201611261721323_InitDb.cs" />
-    <Compile Include="Migrations\201611261721323_InitDb.Designer.cs">
-      <DependentUpon>201611261721323_InitDb.cs</DependentUpon>
+    <Compile Include="Migrations\201612261612271_InitDb.cs" />
+    <Compile Include="Migrations\201612261612271_InitDb.Designer.cs">
+      <DependentUpon>201612261612271_InitDb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611261721323_InitDb.resx">
-      <DependentUpon>201611261721323_InitDb.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Sammo.Blog.Domain\Sammo.Blog.Domain.csproj">
@@ -85,6 +80,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201612261612271_InitDb.resx">
+      <DependentUpon>201612261612271_InitDb.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

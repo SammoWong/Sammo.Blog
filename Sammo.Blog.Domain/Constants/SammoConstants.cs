@@ -15,6 +15,7 @@
             public const int CategoryNameMinLength = 2;
             public const int CategoryNameMaxLength = 10;
             public const int CagegoryDescriptionMaxLength = 30;
+            public const int RoleTypeMaxLength = 10;
             public const int RoleNameMinLength = 2;
             public const int RoleNameMaxLength = 10;
             public const int RoleDescriptionMaxLength = 30;

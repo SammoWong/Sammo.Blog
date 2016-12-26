@@ -20,8 +20,8 @@ namespace Sammo.Blog.Repository.EntityFramework.Mapping
             Property(a => a.Content).HasColumnName("Content").IsRequired();
             Property(a => a.IsTop).HasColumnName("IsTop").IsRequired();
             Property(a => a.PageViews).HasColumnName("PageViews").IsOptional();
-            Property(a => a.CreatedTime).HasColumnName("CreatedTime").IsRequired();
-            Property(a => a.LastEditTime).HasColumnName("LastEditTime").IsOptional();
+            Property(a => a.CreatedOn).HasColumnName("CreatedOn").IsRequired();
+            Property(a => a.ModifiedOn).HasColumnName("ModifiedOn").IsOptional();
 
             //Relationships
             HasMany(a => a.Tags).WithMany(a => a.Articles).Map(a =>

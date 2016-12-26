@@ -8,6 +8,6 @@ namespace Sammo.Blog.Domain.Entities
 
         public short Type { get; set; }
 
-        public DateTime CreateTime { get; set; }
+        public DateTime CreatedOn { get; set; }
     }
 }

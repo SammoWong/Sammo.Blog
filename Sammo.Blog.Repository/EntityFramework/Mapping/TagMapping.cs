@@ -15,8 +15,8 @@ namespace Sammo.Blog.Repository.EntityFramework.Mapping
             Property(t => t.Id).HasColumnName("Id").IsRequired();
             Property(t => t.Name).HasColumnName("Name").IsRequired().HasMaxLength(SammoConstants.Validation.TagNameMaxLength);
             Property(t => t.Description).HasColumnName("Description").IsOptional().HasMaxLength(SammoConstants.Validation.TagDescriptionMaxLength);
-            Property(t => t.CreatedTime).HasColumnName("CreatedTime").IsRequired();
-            Property(t => t.LastEditTime).HasColumnName("LastEditTime").IsOptional();
+            Property(t => t.CreatedOn).HasColumnName("CreatedOn").IsRequired();
+            Property(t => t.ModifiedOn).HasColumnName("ModifiedOn").IsOptional();
         }
     }
 }

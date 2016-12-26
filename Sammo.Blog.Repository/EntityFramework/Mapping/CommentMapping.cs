@@ -19,7 +19,7 @@ namespace Sammo.Blog.Repository.EntityFramework.Mapping
 
             Property(c => c.Id).HasColumnName("Id").IsRequired();
             Property(c => c.Content).HasColumnName("Content").IsRequired().HasMaxLength(SammoConstants.Validation.CommentMaxLength);
-            Property(c => c.CreatedTime).HasColumnName("CreatedTime").IsRequired();
+            Property(c => c.CreatedOn).HasColumnName("CreatedOn").IsRequired();
         }
     }
 }

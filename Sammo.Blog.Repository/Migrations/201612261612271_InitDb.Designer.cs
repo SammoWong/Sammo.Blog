@@ -13,7 +13,7 @@ namespace Sammo.Blog.Repository.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201611261721323_InitDb"; }
+            get { return "201612261612271_InitDb"; }
         }
         
         string IMigrationMetadata.Source

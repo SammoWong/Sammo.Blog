@@ -22,8 +22,8 @@ namespace Sammo.Blog.Repository.EntityFramework.Mapping
             Property(u => u.AvatarUrl).HasColumnName("AvatarUrl").IsOptional().HasMaxLength(SammoConstants.Validation.UrlMaxLength);
             Property(u => u.IsComfirmed).HasColumnName("IsComfirmed").IsRequired();
             Property(u => u.IsLocked).HasColumnName("IsLocked").IsRequired();
-            Property(u => u.CreatedTime).HasColumnName("CreatedTime").IsRequired();
-            Property(u => u.LastEditTime).HasColumnName("LastEditTime").IsOptional();
+            Property(u => u.CreatedOn).HasColumnName("CreatedOn").IsRequired();
+            Property(u => u.ModifiedOn).HasColumnName("ModifiedOn").IsOptional();
             Property(u => u.LastLoginTime).HasColumnName("LastLoginTime").IsOptional();
             Property(u => u.LastLoginIp).HasColumnName("LastLoginIp").IsOptional().HasMaxLength(SammoConstants.Validation.IpAddressMaxLength);
 

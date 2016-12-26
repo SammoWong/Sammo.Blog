@@ -307,6 +307,9 @@
     <Content Include="Static\Portal\Js\Shared\jquery.min.js" />
     <Content Include="Static\Portal\Js\Shared\respond.min.js" />
     <Content Include="Static\Shared\Images\logo.png" />
+    <Content Include="Static\Shared\Js\jquery.min.js" />
+    <Content Include="Static\Shared\Js\jquery.validate.min.js" />
+    <Content Include="Static\Shared\Js\messages_zh.min.js" />
     <Content Include="Static\Shared\Js\Vue\vue-validator.js" />
     <Content Include="Static\Shared\Js\Vue\vue-validator.min.js" />
     <Content Include="Static\Shared\Js\Vue\vue.js" />

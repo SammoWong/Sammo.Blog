@@ -16,8 +16,8 @@ namespace Sammo.Blog.Repository.Migrations
                         Content = c.String(nullable: false),
                         IsTop = c.Boolean(nullable: false),
                         PageViews = c.Int(),
-                        CreatedTime = c.DateTime(nullable: false),
-                        LastEditTime = c.DateTime(),
+                        CreatedOn = c.DateTime(nullable: false),
+                        ModifiedOn = c.DateTime(),
                         BlogId = c.Guid(nullable: false),
                         CatogotyId = c.Guid(),
                     })
@@ -34,12 +34,12 @@ namespace Sammo.Blog.Repository.Migrations
                         Id = c.Guid(nullable: false),
                         Name = c.String(nullable: false, maxLength: 30),
                         Description = c.String(maxLength: 140),
-                        Url = c.String(),
+                        Url = c.String(maxLength: 250),
                         Visits = c.Int(nullable: false),
                         PageViews = c.Int(nullable: false),
                         IsEnabled = c.Boolean(nullable: false),
-                        CreatedTime = c.DateTime(nullable: false),
-                        LastEditTime = c.DateTime(),
+                        CreatedOn = c.DateTime(nullable: false),
+                        ModifiedOn = c.DateTime(),
                         UserId = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
@@ -51,19 +51,20 @@ namespace Sammo.Blog.Repository.Migrations
                 c => new
                     {
                         Id = c.Guid(nullable: false),
-                        UserName = c.String(nullable: false, maxLength: 10),
-                        NickName = c.String(maxLength: 10),
-                        Password = c.String(nullable: false),
+                        UserName = c.String(nullable: false, maxLength: 20),
+                        NickName = c.String(maxLength: 20),
+                        Password = c.String(nullable: false, maxLength: 64),
+                        Salt = c.String(nullable: false, maxLength: 64),
                         Email = c.String(nullable: false, maxLength: 30),
                         Gender = c.Short(),
-                        AvatarUrl = c.String(),
+                        AvatarUrl = c.String(maxLength: 250),
                         IsComfirmed = c.Boolean(nullable: false),
                         IsLocked = c.Boolean(nullable: false),
-                        CreatedTime = c.DateTime(nullable: false),
-                        LastEditTime = c.DateTime(),
+                        CreatedOn = c.DateTime(nullable: false),
+                        ModifiedOn = c.DateTime(),
                         LastLoginTime = c.DateTime(),
-                        LastLoginIp = c.String(),
-                        RoleType = c.Short(nullable: false),
+                        LastLoginIp = c.String(maxLength: 16),
+                        RoleType = c.String(nullable: false, maxLength: 10),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Role", t => t.RoleType)
@@ -75,7 +76,7 @@ namespace Sammo.Blog.Repository.Migrations
                     {
                         Id = c.Guid(nullable: false),
                         Content = c.String(nullable: false, maxLength: 200),
-                        CreatedTime = c.DateTime(nullable: false),
+                        CreatedOn = c.DateTime(nullable: false),
                         UserId = c.Guid(nullable: false),
                         ArticleId = c.Guid(nullable: false),
                     })
@@ -89,11 +90,11 @@ namespace Sammo.Blog.Repository.Migrations
                 "dbo.Role",
                 c => new
                     {
-                        Type = c.Short(nullable: false, identity: true),
+                        Type = c.String(nullable: false, maxLength: 10),
                         Name = c.String(nullable: false, maxLength: 10),
                         Description = c.String(maxLength: 30),
-                        CreatedTime = c.DateTime(nullable: false),
-                        LastEditTime = c.DateTime(),
+                        CreatedOn = c.DateTime(nullable: false),
+                        ModifiedOn = c.DateTime(),
                         Id = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.Type);
@@ -105,8 +106,8 @@ namespace Sammo.Blog.Repository.Migrations
                         Id = c.Guid(nullable: false),
                         Name = c.String(nullable: false, maxLength: 10),
                         Description = c.String(maxLength: 30),
-                        CreatedTime = c.DateTime(nullable: false),
-                        LastEditTime = c.DateTime(),
+                        CreatedOn = c.DateTime(nullable: false),
+                        ModifiedOn = c.DateTime(),
                         BlogId = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
@@ -120,8 +121,8 @@ namespace Sammo.Blog.Repository.Migrations
                         Id = c.Guid(nullable: false),
                         Name = c.String(nullable: false, maxLength: 10),
                         Description = c.String(maxLength: 30),
-                        CreatedTime = c.DateTime(nullable: false),
-                        LastEditTime = c.DateTime(),
+                        CreatedOn = c.DateTime(nullable: false),
+                        ModifiedOn = c.DateTime(),
                     })
                 .PrimaryKey(t => t.Id);
             

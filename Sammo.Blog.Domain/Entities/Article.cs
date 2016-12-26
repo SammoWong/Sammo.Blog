@@ -5,17 +5,23 @@ namespace Sammo.Blog.Domain.Entities
 {
     public class Article : EntityBase
     {
+        public Article()
+        {
+            CreatedOn = DateTime.Now;
+            PageViews = 1;
+            IsTop = false;
+        }
         public string Title { get; set; }
 
         public string Content { get; set; }
 
         public bool IsTop { get; set; }
 
-        public int PageViews { get; set; } = 1;
+        public int PageViews { get; set; }
 
-        public DateTime CreatedTime { get; set; } = DateTime.Now;
+        public DateTime CreatedOn { get; set; }
 
-        public DateTime LastEditTime { get; set; }
+        public DateTime ModifiedOn { get; set; }
 
         public virtual Category Category { get; set; }
 

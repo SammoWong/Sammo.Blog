@@ -11,14 +11,14 @@ namespace Sammo.Blog.Repository.EntityFramework.Mapping
             ToTable("Role");
 
             //设置复合主键
-            HasKey(r => r.Type );
+            HasKey(r => r.Type);
 
             Property(r => r.Id).HasColumnName("Id").IsRequired();
-            Property(r => r.Type).HasColumnName("Type").IsRequired();
+            Property(r => r.Type).HasColumnName("Type").IsRequired().HasMaxLength(SammoConstants.Validation.RoleTypeMaxLength);
             Property(r => r.Name).HasColumnName("Name").IsRequired().HasMaxLength(SammoConstants.Validation.RoleNameMaxLength);
             Property(r => r.Description).HasColumnName("Description").IsOptional().HasMaxLength(SammoConstants.Validation.RoleDescriptionMaxLength);
-            Property(r => r.CreatedTime).HasColumnName("CreatedTime").IsRequired();
-            Property(r => r.LastEditTime).HasColumnName("LastEditTime").IsOptional();
+            Property(r => r.CreatedOn).HasColumnName("CreatedOn").IsRequired();
+            Property(r => r.ModifiedOn).HasColumnName("ModifiedOn").IsOptional();
 
             HasMany(r => r.Users).WithRequired(r => r.Role).Map(r => r.MapKey("RoleType")).WillCascadeOnDelete(false);
         }
