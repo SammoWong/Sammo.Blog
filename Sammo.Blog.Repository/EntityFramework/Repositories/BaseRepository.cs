@@ -1,5 +1,4 @@
 ﻿using EntityFramework.Extensions;
-using Sammo.Blog.Domain;
 using Sammo.Blog.Domain.Entities;
 using Sammo.Blog.Domain.Repositories;
 using System;
@@ -13,7 +12,11 @@ namespace Sammo.Blog.Repository.EntityFramework.Repositories
 {
     public class BaseRepository<T> : IRepository<T> where T : EntityBase
     {
-        protected SammoDbContext SammoDbContext = new SammoDbContext();
+        protected readonly SammoDbContext SammoDbContext;
+        public BaseRepository(SammoDbContext sammoDbContext)
+        {
+            SammoDbContext = sammoDbContext;
+        }
 
         public IQueryable<T> Find(Expression<Func<T,bool>> filter)
         {
@@ -27,7 +30,7 @@ namespace Sammo.Blog.Repository.EntityFramework.Repositories
 
         public Task<T> FindSingleAsync(Expression<Func<T,bool>> filter)
         {
-            return SammoDbContext.Set<T>().AsNoTracking().FirstOrDefaultAsync(filter);
+            return SammoDbContext.Set<T>().FirstOrDefaultAsync(filter);
         }
 
         public Task<int> GetCountAsync(Expression<Func<T,bool>> filter)

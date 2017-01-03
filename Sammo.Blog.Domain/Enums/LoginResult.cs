@@ -4,6 +4,7 @@
     {
         Success,
         UserNameOrEmailNotFound,
-        PasswordIncorrect
+        PasswordIncorrect,
+        IsLocked
     }
 }

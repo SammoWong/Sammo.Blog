@@ -6,6 +6,7 @@ using Sammo.Blog.Domain.DomainService;
 using Sammo.Blog.Domain.Repositories;
 using Sammo.Blog.Repository.EntityFramework;
 using Sammo.Blog.Repository.EntityFramework.Repositories;
+using System.Data.Entity;
 using System.Linq;
 using System.Reflection;
 using System.Web.Mvc;
@@ -19,6 +20,7 @@ namespace Sammo.Blog.Web
         public static void Register()
         {
             var builder = new ContainerBuilder();
+            builder.RegisterType(typeof(SammoDbContext)).As(typeof(SammoDbContext)).InstancePerLifetimeScope();
             //注册数据库基础操作和工作单元
             builder.RegisterGeneric(typeof(BaseRepository<>)).As(typeof(IRepository<>));
             builder.RegisterType(typeof(UnitOfWork)).As(typeof(IUnitOfWork));

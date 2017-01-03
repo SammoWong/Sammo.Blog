@@ -239,8 +239,10 @@
     <Compile Include="Areas\Admin\Controllers\AdminBaseController.cs" />
     <Compile Include="Common\Extensions\ModelStateExtension.cs" />
     <Compile Include="Common\Handlers\ErrorHandler.cs" />
+    <Compile Include="Common\Handlers\HandleAuthorizeAttribute.cs" />
     <Compile Include="Common\Results\Json.cs" />
     <Compile Include="Common\Results\JsonData.cs" />
+    <Compile Include="Common\UserContext.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\HomeController.cs" />

@@ -1,5 +1,4 @@
-﻿using Sammo.Blog.Domain;
-using Sammo.Blog.Domain.Entities;
+﻿using Sammo.Blog.Domain.Entities;
 using System;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;

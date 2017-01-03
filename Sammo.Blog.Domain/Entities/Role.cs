@@ -17,7 +17,7 @@ namespace Sammo.Blog.Domain.Entities
 
         public DateTime CreatedOn { get; set; } 
 
-        public DateTime ModifiedOn { get; set; }
+        public DateTime? ModifiedOn { get; set; }
 
         public virtual ICollection<User> Users { get; set; }
     }

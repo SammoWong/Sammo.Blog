@@ -51,5 +51,11 @@
             public const string Email = "^[_a-zA-Z0-9-]+(\\.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*(\\.[a-zA-Z]{2,4})$";
 
         }
+
+        public static class Roles
+        {
+            public const string User = "User";
+            public const string Admin = "Admin";
+        }
     }
 }

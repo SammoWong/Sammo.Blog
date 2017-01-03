@@ -1,5 +1,6 @@
 namespace Sammo.Blog.Repository.Migrations
 {
+    using System;
     using System.Data.Entity.Migrations;
 
     internal sealed class Configuration : DbMigrationsConfiguration<Sammo.Blog.Repository.EntityFramework.SammoDbContext>
@@ -24,6 +25,12 @@ namespace Sammo.Blog.Repository.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+            context.Role.AddOrUpdate(
+                r => r.Type,
+                new Domain.Entities.Role { Type = "Admin", Name = "系统管理员", Description = "系统管理员", CreatedOn = DateTime.Now, Id = Guid.NewGuid() },
+                new Domain.Entities.Role { Type = "User", Name = "用户", Description = "用户", CreatedOn = DateTime.Now, Id = Guid.NewGuid() }
+                );
+            context.SaveChanges();
         }
     }
 }

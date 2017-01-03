@@ -34,7 +34,7 @@ namespace Sammo.Blog.Domain.Entities
 
         public DateTime ModifiedOn { get; set; }
 
-        public DateTime LastLoginTime { get; set; }
+        public DateTime? LastLoginTime { get; set; }
 
         public string LastLoginIp { get; set; }
 

@@ -27,7 +27,7 @@
             user:{}
         };
         
-        var registerUrl = '/Admin/Account/RegisterAsync';
+        var registerUrl = 'Admin/Account/RegisterAsync';
         this.methods = {
             register: function () {
                 var self = this;

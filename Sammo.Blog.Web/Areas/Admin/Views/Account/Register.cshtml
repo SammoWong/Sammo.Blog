@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Sammo.Blog.Application.Account.Dto.RegisterInput
+@{
     Layout = null;
 }
 <!DOCTYPE html>
@@ -24,26 +25,47 @@
         </div>
         <h3>欢迎来到Sammo's Blog</h3>
         <p>创建一个新账户</p>
-        <form id="registerForm" role="form" method="post">
-            <div class="m-t">
-                <div class="form-group">
-                    <input type="text" id="userName" class="form-control" placeholder="请输入用户名" v-model="user.userName" name="userName" />
+        @*<form id="registerForm" role="form">
+                <div class="m-t">
+                    <div class="form-group">
+                        <input type="text" id="userName" class="form-control" placeholder="请输入用户名" v-model="user.userName" name="userName" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="email" class="form-control" placeholder="请输入邮箱" v-model="user.email" name="email" />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" class="form-control" placeholder="请输入密码" v-model="user.password" name="password" />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="comfirmPassword" class="form-control" placeholder="请再次输入密码" v-model="user.confirmPassword" name="confirmPassword" />
+                    </div>
+                    <button class="btn btn-primary block full-width m-b" v-on:click="register(registerModel)" type="submit">注 册</button>
+                    <p class="text-muted text-center">
+                        <small>已经有账户了？</small><a href="/Admin/Account/Login">点此登录</a>
+                    </p>
                 </div>
+            </form>*@
+        @using (Html.BeginForm("RegisterAsync", "Account", FormMethod.Post, new { @class = "m-t", id = "registerForm" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = "请输入用户名", v_model = "user.userName", name = "userName" })
+            </div>
+            <div class="form-group">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "请输入邮箱地址", v_model = "user.email", name = "email" })
+            </div>
+            <div class="form-group">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "请输入密码", v_model = "user.password", name = "password" })
+            </div>
                 <div class="form-group">
-                    <input type="text" id="email" class="form-control" placeholder="请输入邮箱" v-model="user.email" name="email" />
+                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "请再次输入密码", v_model = "user.confirmPassword", name = "confirmPassword" })
                 </div>
-                <div class="form-group">
-                    <input type="password" id="password" class="form-control" placeholder="请输入密码" v-model="user.password" name="password" />
-                </div>
-                <div class="form-group">
-                    <input type="password" id="comfirmPassword" class="form-control" placeholder="请再次输入密码" v-model="user.confirmPassword" name="confirmPassword" />
-                </div>
-                <button class="btn btn-primary block full-width m-b" v-on:click="register(registerModel)" type="submit">注 册</button>
+                <button type="submit" class="btn btn-primary block full-width m-b" v-on:click="register(registerModel)">注 册</button>
                 <p class="text-muted text-center">
                     <small>已经有账户了？</small><a href="/Admin/Account/Login">点此登录</a>
                 </p>
-            </div>
-        </form>
+                @Html.ValidationSummary("", new { @class = "form-group text-left , text-danger" })
+        }
     </div>
     <!-- Mainly scripts -->
     <script src="~/Static/Admin/Js/Shared/jquery-2.1.1.min.js"></script>
