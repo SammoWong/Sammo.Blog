@@ -11,12 +11,9 @@
     <title>注册 - Sammo's Blog</title>
     <meta name="keywords" content="Sammo's Blog">
     <meta name="description" content="Sammo's Blog">
-    <link href="~/Static/Admin/Css/Shared/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/Static/Admin/Css/Shared/font-awesome.css" rel="stylesheet" />
-    <link href="~/Static/Shared/Plugins/ICheck/custom.css" rel="stylesheet" />
-    <link href="~/Static/Admin/Css/Shared/animate.css" rel="stylesheet" />
-    <link href="~/Static/Admin/Css/Shared/style.css" rel="stylesheet" />
-    <link href="~/Static/Shared/Plugins/Toastr/toastr.min.css" rel="stylesheet" />
+    @Styles.Render("~/Bundles/Static/Css/Admin/Common")
+    @Styles.Render("~/Bundles/Static/Css/Animate")
+    @Styles.Render("~/Bundles/Static/Css/ICheck")
 </head>
 <body class="gray-bg">
     <div class="middle-box text-center loginscreen   animated fadeInDown">
@@ -57,9 +54,9 @@
             <div class="form-group">
                 @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "请输入密码", v_model = "user.password", name = "password" })
             </div>
-                <div class="form-group">
-                    @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "请再次输入密码", v_model = "user.confirmPassword", name = "confirmPassword" })
-                </div>
+            <div class="form-group">
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", placeholder = "请再次输入密码", v_model = "user.confirmPassword", name = "confirmPassword" })
+            </div>
                 <button type="submit" class="btn btn-primary block full-width m-b" v-on:click="register(registerModel)">注 册</button>
                 <p class="text-muted text-center">
                     <small>已经有账户了？</small><a href="/Admin/Account/Login">点此登录</a>
@@ -68,14 +65,10 @@
         }
     </div>
     <!-- Mainly scripts -->
-    <script src="~/Static/Admin/Js/Shared/jquery-2.1.1.min.js"></script>
-    <script src="~/Static/Shared/Js/jquery.validate.min.js"></script>
-    <script src="~/Static/Admin/Js/Shared/bootstrap.min.js"></script>
-    <script src="~/Static/Shared/Js/Vue/vue.min.js"></script>
-    <script src="~/Static/Shared/Js/Vue/vue-validator.min.js"></script>
-    <script src="~/Static/Shared/Plugins/ICheck/icheck.min.js"></script>
-    <script src="~/Static/Shared/Plugins/Toastr/toastr.min.js"></script>
-    <script src="~/Static/Shared/Js/messages_zh.min.js"></script>
-    <script src="~/Static/Admin/Js/Account/register.js"></script>
+    @Scripts.Render("~/Bundles/Static/Js/Admin/Common")
+    @Scripts.Render("~/Bundles/Static/Js/Vue")
+    @Scripts.Render("~/Bundles/Static/Js/ICheck")
+    @Scripts.Render("~/Bundles/Static/Js/Toastr")
+    @Scripts.Render("~/Bundles/Static/Js/Register")
 </body>
 </html>

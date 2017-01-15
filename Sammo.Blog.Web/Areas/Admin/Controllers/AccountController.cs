@@ -18,19 +18,23 @@ namespace Sammo.Blog.Web.Areas.Admin.Controllers
         {
             _service = IoCConfig.Get<AccountAppService>();
         }
+
         [AllowAnonymous]
+        [Route("Account/Register")]
         public ActionResult Register()
         {
             return View();
         }
 
         [AllowAnonymous]
+        [Route("Account/Login")]
         public ActionResult Login()
         {
             return View();
         }
 
         [HttpPost,AllowAnonymous]
+        [Route("Account/Register")]
         public async Task<ActionResult> RegisterAsync(RegisterInput input)
         {
             await CheckModelStateAsync();
@@ -52,6 +56,7 @@ namespace Sammo.Blog.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [Route("Account/Login")]
         public async Task<ActionResult> Login(LoginInput input)
         {
             await CheckModelStateAsync();
@@ -70,6 +75,16 @@ namespace Sammo.Blog.Web.Areas.Admin.Controllers
                 default:
                     return new Json(false, "登陆失败", null);
             }
+        }
+
+        [Route("Account/Confirm")]
+        public async Task<JsonResult> ConfirmAsync(string userId)
+        {
+            var result = await _service.ConfirmAsync(userId);
+            if (result)
+                return new Json(true, "注册成功", null);
+
+            return new Json(false, "注册失败", null);
         }
 
         private void SetAuthCookie(Guid id, string userName, string nickName, string role, bool rememberMe = false)

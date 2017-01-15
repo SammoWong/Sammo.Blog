@@ -12,11 +12,9 @@
     <title>登录 - Sammo's Blog</title>
     <meta name="keywords" content="Sammo's Blog">
     <meta name="description" content="Sammo's Blog">
-    <link href="~/Static/Admin/Css/Shared/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/Static/Admin/Css/Shared/font-awesome.css" rel="stylesheet" />
-    <link href="~/Static/Admin/Css/Shared/animate.css" rel="stylesheet" />
-    <link href="~/Static/Admin/Css/Shared/style.css" rel="stylesheet" />
-    <link href="~/Static/Shared/Plugins/ICheck/custom.css" rel="stylesheet" />
+    @Styles.Render("~/Bundles/Static/Css/Admin/Common")
+    @Styles.Render("~/Bundles/Static/Css/Animate")
+    @Styles.Render("~/Bundles/Static/Css/ICheck")
 </head>
 
 <body class="gray-bg">
@@ -75,10 +73,10 @@
         </div>
     </div>
     <!-- Mainly scripts -->
-    <script src="https://unpkg.com/vue/dist/vue.js"></script>
-    <script src="~/Static/Admin/Js/Shared/jquery-2.1.1.min.js"></script>
-    <script src="~/Static/Admin/Js/Shared/bootstrap.min.js"></script>
-    <script src="~/Static/Shared/Plugins/ICheck/icheck.min.js"></script>
+    @Scripts.Render("~/Bundles/Static/Js/Admin/Common")
+    @Scripts.Render("~/Bundles/Static/Js/Vue")
+    @Scripts.Render("~/Bundles/Static/Js/ICheck")
+    @Scripts.Render("~/Bundles/Static/Js/Toastr")
     <script>
         $(document).ready(function () {
             $('.i-checks').iCheck({

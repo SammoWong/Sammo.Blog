@@ -237,16 +237,16 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminBaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Common\Extensions\ModelStateExtension.cs" />
     <Compile Include="Common\Handlers\ErrorHandler.cs" />
     <Compile Include="Common\Handlers\HandleAuthorizeAttribute.cs" />
     <Compile Include="Common\Results\Json.cs" />
     <Compile Include="Common\Results\JsonData.cs" />
     <Compile Include="Common\UserContext.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\DemoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -273,6 +273,7 @@
     <Content Include="Areas\Admin\Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Areas\Admin\Views\Account\Login.cshtml" />
     <Content Include="Areas\Admin\Views\Account\Register.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -285,37 +286,26 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Static\Admin\Css\Shared\animate.css" />
-    <Content Include="Static\Admin\Css\Shared\bootstrap-rtl.css" />
-    <Content Include="Static\Admin\Css\Shared\bootstrap.min.css" />
-    <Content Include="Static\Admin\Css\Shared\font-awesome.css" />
-    <Content Include="Static\Admin\Css\Shared\style.css" />
+    <Content Include="Static\Admin\Css\adminStyle.css" />
     <Content Include="Static\Admin\Js\Account\register.js" />
-    <Content Include="Static\Admin\Js\Shared\bootstrap.min.js" />
-    <Content Include="Static\Admin\Js\Shared\hplus.js" />
-    <Content Include="Static\Admin\Js\Shared\jquery-2.1.1.min.js" />
-    <Content Include="Static\Admin\Js\Shared\jquery-ui-1.10.4.min.js" />
-    <Content Include="Static\Admin\Js\Shared\jquery-ui.custom.min.js" />
-    <Content Include="Static\Portal\Css\Shared\animate.css" />
-    <Content Include="Static\Portal\Css\Shared\bootstrap-rtl.css" />
-    <Content Include="Static\Portal\Css\Shared\bootstrap.min.css" />
-    <Content Include="Static\Portal\Css\Shared\rewrite-bootstrap.css" />
-    <Content Include="Static\Portal\Css\Shared\font-awesome.css" />
-    <Content Include="Static\Portal\Css\Shared\font-awesome.min.css" />
-    <Content Include="Static\Portal\Css\Shared\style.css" />
-    <Content Include="Static\Portal\Js\Shared\base.js" />
-    <Content Include="Static\Portal\Js\Shared\bootstrap.min.js" />
-    <Content Include="Static\Portal\Js\Shared\html5.js" />
-    <Content Include="Static\Portal\Js\Shared\jquery.min.js" />
-    <Content Include="Static\Portal\Js\Shared\respond.min.js" />
+    <Content Include="Static\Admin\Js\hplus.js" />
+    <Content Include="Static\Blog\Css\blogStyle.css" />
+    <Content Include="Static\Blog\Js\base.js" />
+    <Content Include="Static\Shared\Css\bootstrap-admin.min.css" />
+    <Content Include="Static\Shared\Css\bootstrap.min.css" />
+    <Content Include="Static\Shared\Css\font-awesome.min.css" />
+    <Content Include="Static\Shared\Css\rewrite-bootstrap.css" />
     <Content Include="Static\Shared\Images\logo.png" />
+    <Content Include="Static\Shared\Js\bootstrap.min.js" />
     <Content Include="Static\Shared\Js\jquery.min.js" />
+    <Content Include="Static\Shared\Js\jquery.slim.min.js" />
     <Content Include="Static\Shared\Js\jquery.validate.min.js" />
     <Content Include="Static\Shared\Js\messages_zh.min.js" />
     <Content Include="Static\Shared\Js\Vue\vue-validator.js" />
     <Content Include="Static\Shared\Js\Vue\vue-validator.min.js" />
     <Content Include="Static\Shared\Js\Vue\vue.js" />
     <Content Include="Static\Shared\Js\Vue\vue.min.js" />
+    <Content Include="Static\Shared\Plugins\Animate\animate.css" />
     <Content Include="Static\Shared\Plugins\Gritter\jquery.gritter.css" />
     <Content Include="Static\Shared\Plugins\ICheck\custom.css" />
     <Content Include="Static\Shared\Plugins\ICheck\green%402x.png" />
@@ -350,8 +340,6 @@
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\SendCode.cshtml" />
@@ -369,6 +357,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\AdminBase\" />
+    <Folder Include="Views\Demo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

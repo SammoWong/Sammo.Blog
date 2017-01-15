@@ -27,7 +27,48 @@ namespace Sammo.Blog.Web
             //          "~/Content/bootstrap.css",
             //          "~/Content/site.css"));
 
+            #region Style
+            bundles.Add(new StyleBundle("~/Bundles/Static/Css/Blog/Common").Include(
+                "~/Static/Shared/Css/bootstrap.min.css",
+                "~/Static/Shared/Css/font-awesome.min.css",
+                "~/Static/Shared/Css/rewrite-bootstrap.css",
+                "~/Static/Blog/Css/blogStyle.css"));
 
+            bundles.Add(new StyleBundle("~/Bundles/Static/Css/Admin/Common").Include(
+                "~/Static/Shared/Css/bootstrap-admin.min.css",
+                "~/Static/Shared/Css/font-awesome.min.css",
+                "~/Static/Admin/Css/adminStyle.css"));
+
+            bundles.Add(new StyleBundle("~/Bundles/Static/Css/Animate").Include("~/Static/Shared/Plugins/Animate/animate.css"));
+            bundles.Add(new StyleBundle("~/Bundles/Static/Css/ICheck").Include("~/Static/Shared/Plugins/ICheck/custom.css"));
+            bundles.Add(new StyleBundle("~/Bundles/Static/Css/Toastr").Include("~/Static/Shared/Plugins/ICheck/toastr.min.css"));
+            #endregion
+
+            #region Script
+            bundles.Add(new ScriptBundle("~/Bundles/Static/Js/Blog/Common").Include(
+                "~/Static/Shared/Js/jquery.min.js",
+                "~/Static/Shared/Js/bootstrap.min.js",
+                "~/Static/Blog/Js/base.js"));
+
+            bundles.Add(new ScriptBundle("~/Bundles/Static/Js/Admin/Common").Include(
+                "~/Static/Shared/Js/jquery.min.js",
+                "~/Static/Shared/Js/bootstrap.min.js",
+                "~/Static/Shared/Js/jquery.validate.min.js",
+                "~/Static/Shared/Js/message_zh.min.js"));
+
+            bundles.Add(new ScriptBundle("~/Bundles/Static/Js/Vue").Include(
+                "~/Static/Shared/Js/Vue/vue.min.js",
+                "~/Static/Shared/Js/Vue/vue-validator.min.js"));
+
+            #region Plugins
+            bundles.Add(new ScriptBundle("~/Bundles/Static/Js/ICheck").Include("~/Static/Shared/Plugins/ICheck/icheck.min.js"));
+            bundles.Add(new ScriptBundle("~/Bundles/Static/Js/Toastr").Include("~/Static/Shared/Plugins/Toastr/toastr.min.js"));
+            #endregion
+
+            bundles.Add(new ScriptBundle("~/Bundles/Static/Js/Register").Include("~/Static/Admin/Js/Account/register.js"));
+
+
+            #endregion
 
         }
     }
