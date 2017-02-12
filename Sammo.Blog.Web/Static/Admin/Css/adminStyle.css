@@ -1495,6 +1495,9 @@ a.list-group-item.active:focus {
 .h-200 {
   min-height: 200px;
 }
+.h-500 {
+  min-height: 500px;
+}
 .legendLabel {
   padding-left: 5px;
 }

@@ -48,6 +48,9 @@
     <Compile Include="Account\AccountAppService.cs" />
     <Compile Include="Account\Dto\LoginInput.cs" />
     <Compile Include="Account\Dto\RegisterInput.cs" />
+    <Compile Include="Blog\BlogAppService.cs" />
+    <Compile Include="Blog\Dto\AddBlogInput.cs" />
+    <Compile Include="Blog\Dto\CategoryOutput.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

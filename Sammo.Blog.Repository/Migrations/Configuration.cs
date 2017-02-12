@@ -30,6 +30,11 @@ namespace Sammo.Blog.Repository.Migrations
                 new Domain.Entities.Role { Type = "Admin", Name = "系统管理员", Description = "系统管理员", CreatedOn = DateTime.Now, Id = Guid.NewGuid() },
                 new Domain.Entities.Role { Type = "User", Name = "用户", Description = "用户", CreatedOn = DateTime.Now, Id = Guid.NewGuid() }
                 );
+            context.Category.AddOrUpdate(
+                c => c.Id,
+                new Domain.Entities.Category { Id = Guid.NewGuid(), Name = ".NET", CreatedOn = DateTime.Now },
+                new Domain.Entities.Category { Id = Guid.NewGuid(), Name = "WEB前端", CreatedOn = DateTime.Now }
+                );
             context.SaveChanges();
         }
     }

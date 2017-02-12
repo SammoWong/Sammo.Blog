@@ -237,6 +237,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AccountController.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminBaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BlogController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Common\Extensions\ModelStateExtension.cs" />
     <Compile Include="Common\Handlers\ErrorHandler.cs" />
@@ -274,6 +275,9 @@
     <Content Include="Areas\Admin\Views\Account\Login.cshtml" />
     <Content Include="Areas\Admin\Views\Account\Register.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Blog\Add.cshtml" />
+    <Content Include="Areas\Admin\Views\Blog\List.cshtml" />
+    <Content Include="Areas\Admin\Views\Blog\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -295,6 +299,7 @@
     <Content Include="Static\Shared\Css\bootstrap.min.css" />
     <Content Include="Static\Shared\Css\font-awesome.min.css" />
     <Content Include="Static\Shared\Css\rewrite-bootstrap.css" />
+    <Content Include="Static\Shared\Fonts\fontawesome-webfont.svg" />
     <Content Include="Static\Shared\Images\logo.png" />
     <Content Include="Static\Shared\Js\bootstrap.min.js" />
     <Content Include="Static\Shared\Js\jquery.min.js" />
@@ -306,6 +311,10 @@
     <Content Include="Static\Shared\Js\Vue\vue.js" />
     <Content Include="Static\Shared\Js\Vue\vue.min.js" />
     <Content Include="Static\Shared\Plugins\Animate\animate.css" />
+    <Content Include="Static\Shared\Plugins\Chosen\chosen-sprite%402x.png" />
+    <Content Include="Static\Shared\Plugins\Chosen\chosen-sprite.png" />
+    <Content Include="Static\Shared\Plugins\Chosen\chosen.css" />
+    <Content Include="Static\Shared\Plugins\Chosen\chosen.jquery.js" />
     <Content Include="Static\Shared\Plugins\Gritter\jquery.gritter.css" />
     <Content Include="Static\Shared\Plugins\ICheck\custom.css" />
     <Content Include="Static\Shared\Plugins\ICheck\green%402x.png" />
@@ -314,8 +323,11 @@
     <Content Include="Static\Shared\Plugins\MetisMenu\jquery.metisMenu.js" />
     <Content Include="Static\Shared\Plugins\Morris\morris-0.4.3.min.css" />
     <Content Include="Static\Shared\Plugins\Pace\pace.min.js" />
+    <Content Include="Static\Shared\Plugins\SlimScroll\jquery.slimscroll.min.js" />
     <Content Include="Static\Shared\Plugins\Summernote\summernote-bs3.css" />
+    <Content Include="Static\Shared\Plugins\Summernote\summernote-zh-CN.js" />
     <Content Include="Static\Shared\Plugins\Summernote\summernote.css" />
+    <Content Include="Static\Shared\Plugins\Summernote\summernote.min.js" />
     <Content Include="Static\Shared\Plugins\Toastr\toastr.min.css" />
     <Content Include="Static\Shared\Plugins\Toastr\toastr.min.js" />
     <Content Include="Web.config">
@@ -352,6 +364,14 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Static\Shared\Fonts\fontawesome-webfont.eot" />
+    <Content Include="Static\Shared\Fonts\fontawesome-webfont.eot_v=4.3.0" />
+    <Content Include="Static\Shared\Fonts\fontawesome-webfont.svg_v=4.3.0" />
+    <Content Include="Static\Shared\Fonts\fontawesome-webfont.ttf" />
+    <Content Include="Static\Shared\Fonts\fontawesome-webfont.ttf_v=4.3.0" />
+    <Content Include="Static\Shared\Fonts\fontawesome-webfont.woff" />
+    <Content Include="Static\Shared\Fonts\fontawesome-webfont.woff2_v=4.3.0" />
+    <Content Include="Static\Shared\Fonts\fontawesome-webfont.woff_v=4.3.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

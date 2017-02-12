@@ -18,7 +18,7 @@ namespace Sammo.Blog.Repository.EntityFramework.Repositories
             SammoDbContext = sammoDbContext;
         }
 
-        public IQueryable<T> Find(Expression<Func<T,bool>> filter)
+        public IQueryable<T> Find(Expression<Func<T,bool>> filter = null)
         {
             return Filter(filter);
         }
@@ -77,7 +77,7 @@ namespace Sammo.Blog.Repository.EntityFramework.Repositories
         private IQueryable<T> Filter(Expression<Func<T,bool>> filter)
         {
             var dbSet = SammoDbContext.Set<T>().AsQueryable();
-            if (dbSet != null)
+            if (filter != null)
                 dbSet = dbSet.Where(filter);
 
             return dbSet;

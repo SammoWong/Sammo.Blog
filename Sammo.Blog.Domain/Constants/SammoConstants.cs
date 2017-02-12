@@ -43,6 +43,7 @@
             public const string NickNameFormatError = "昵称必须为4-20个字符，支持中文、英文、数字";
             public const string EmailFormatError = "邮箱格式不正确";
             public const string UserNameOrEmailNotFound = "用户名或邮箱不存在";
+            public const string ArticleTitleLengthError = "博客文章标题必须为5-30个字符";
         }
 
         public static class RegularPattern

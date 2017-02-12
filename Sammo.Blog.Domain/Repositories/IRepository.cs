@@ -8,7 +8,7 @@ namespace Sammo.Blog.Domain.Repositories
 {
     public interface IRepository<T> where T: EntityBase
     {
-        IQueryable<T> Find(Expression<Func<T, bool>> filter);
+        IQueryable<T> Find(Expression<Func<T, bool>> filter = null);
 
         Task<bool> IsExistsAsync(Expression<Func<T, bool>> filter);
 
